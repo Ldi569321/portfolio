@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poor Story', cursive;
+    margin: 0px;
+}
+
+#container {
+    height: auto;
+}
+
+#profile h1 {
+    font-size: 50px;
+    font-weight: 900;
+}
+
+#header {
+    width: 95%;
+    height: 100px;
+    background-color: lightslategray;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 70px;
+    position: fixed;
+    z-index: 2;
+}
+
+#header h1 {
+    color: white;
+
+}
+
+#header ul li {
+    list-style-type: none;
+    float: left;
+    padding: 3px;
+    border-radius: 2.5px;
+    margin: 20px 30px 0px 0px;
+    align-items: center;
+    font-weight: bold;
+    -webkit-transition: all 0.3s;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+#header ul li :hover {
+    color: lightslategray;
+    padding: 8px;
+    border-radius: 10px;
+    transition: 0.3s all ease;
+}
+
+#header ul li:hover {
+    background-color: white;
+    color: lightslategray;
+    padding: 8px;
+    border-radius: 10px;
+    -webkit-transition: all 0.3s;
+    box-shadow: 1px 1px 20px #ddd;
+}
+
+#header ul {
+    align-items: center;
+}
+
+#header a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+#profile {
+    width: auto;
+    height: 650px;
+    background-color: #D6DBE0;
+    text-align: center;
+    padding-top: 100px;
+}
+
+#profile hr {
+    width: 400px;
+    height: 4px;
+    background-color: black;
+}
+
+#profile img {
+    width: auto;
+    height: 360px;
+    /*마우스 오버의 반대 = 기본상태에 트랜지션을 주고 hover에 webkit 트랜지션을 준다.*/
+    transition: 0.3s ease all;
+    margin: 10px 0px 10px 0px;
+}
+
+#profile img:hover {
+    width: auto;
+    height: 400px;
+    -webkit-transition: all 0.3s;
+}
+
+.portfolio {
+    background-color: white;
+    width: auto;
+    height: 600px;
+    padding: 60px;
+    text-align: center;
+}
+
+.portfolio h1 {
+    font-size: 45px;
+    font-weight: 900;
+}
+
+.portfolio img {
+    width: auto;
+    height: 360px;
+    cursor: pointer;
+    margin: 40px 28px 40px 28px;
+    transition: 0.4s ease all;
+    /*z-index는 숫자가 높은 낮은 순서대로 차곡차곡 쌓인다*/
+    z-index: 1;
+}
+
+/*포트폴리오가 존재하는 a href를 이용해서 포폴 있는것만 흑백X*/
+.portfolio a img:hover {
+    box-shadow: 2px 2px 15px gray;
+    width: auto;
+    height: 370px;
+    filter: blur(5px);
+    -webkit-transition: 0.4s ease all;
+    filter: brightness(90%);
+}
+
+/*포폴이 없는 a태그가 안쓰인 포트폴리오안의 이미지들을 오버시 흑백처리*/
+.portfolio img:hover {
+    box-shadow: 2px 2px 15px gray;
+    width: auto;
+    height: 370px;
+    filter: blur(5px);
+    -webkit-transition: 0.4s ease all;
+    filter: brightness(90%);
+    -webkit-filter: grayscale(100%);
+}
+
+.portfolio hr {
+    width: 1230px;
+    border: 2px solid black;
+    background-color: black;
+}
+
+.about {
+    width: auto;
+    height: 280px;
+    background-color: #D6DBE0;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.about h1 {
+    font-size: 50px;
+}
+
+.about hr {
+    width: 400px;
+    height: 2px;
+    border: 2px solid black;
+    background-color: black;
+}
+
+.contact {
+    width: auto;
+    height: 300px;
+    background-color: #555759;
+    text-align: center;
+    padding: 20px;
+}
+
+.contact hr {
+    width: 400px;
+    height: 2px;
+    border: 2px solid black;
+    background-color: black;
+}
+
+.contact h1 {
+    font-size: 45px;
+}
