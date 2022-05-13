@@ -99,7 +99,7 @@ body {
 #profile img:hover {
     width: auto;
     height: 400px;
-    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .portfolio {
