@@ -1,12 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Poor Story', cursive;
+    font-family: 'GmarketSansBold';
     margin: 0px;
+    box-sizing: border-box;
 }
 
 #container {
@@ -19,52 +25,72 @@ body {
 }
 
 #header {
-    width: 95%;
+    width: 100%;
     height: 100px;
     background-color: lightslategray;
     display: flex;
     justify-content: space-between;
-    padding: 0px 70px;
     position: fixed;
     z-index: 2;
 }
 
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
 #header h1 {
     color: white;
-
+    margin-left: 30px;
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
 }
 
-#header ul li {
-    list-style-type: none;
-    float: left;
-    padding: 3px;
-    border-radius: 2.5px;
-    margin: 20px 30px 0px 0px;
+#header h1:hover {
+    color: transparent;
+}
+
+#header h1:hover::before {
+    color: white;
+    content: "LeeDongIn";
+}
+
+
+#header ul li>a {
+    padding: 10px;
+    border-radius: 6px;
     align-items: center;
     font-weight: bold;
-    -webkit-transition: all 0.3s;
-    background-color: transparent;
+    transition: 0.2s ease all;
     font-size: 20px;
+    text-align: center;
+    margin-right: 10px;
 }
 
-#header ul li :hover {
-    color: lightslategray;
-    padding: 8px;
-    border-radius: 10px;
-    transition: 0.3s all ease;
-}
-
-#header ul li:hover {
-    background-color: white;
-    color: lightslategray;
-    padding: 8px;
-    border-radius: 10px;
-    -webkit-transition: all 0.3s;
-    box-shadow: 1px 1px 20px #ddd;
-}
-
-#header ul {
+#header ul li:hover>a {
+    transition: 0.2s ease all;
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 6px;
     align-items: center;
+    background-color: white;
+    font-size: 20px;
+    color: #555759;
+}
+
+#header ul li>a:active {
+    background-color: #b8c7d6;
+    transition: 0.2s ease all;
+}
+
+
+header ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
 }
 
 #header a {
@@ -72,10 +98,8 @@ body {
     color: white;
 }
 
-
-
 #profile {
-    width: auto;
+    width: 100%;
     height: 650px;
     background-color: #D6DBE0;
     text-align: center;
@@ -91,7 +115,7 @@ body {
 #profile img {
     width: auto;
     height: 360px;
-    /*마우스 오버의 반대 = 기본상태에 트랜지션을 주고 hover에 webkit 트랜지션을 준다.*/
+    /*마우스 오버의 반대 = 기본상태에 트랜지션을 주고 hover에트랜지션을 준다.*/
     transition: 0.3s ease all;
     margin: 10px 0px 10px 0px;
 }
@@ -99,14 +123,13 @@ body {
 #profile img:hover {
     width: auto;
     height: 400px;
-    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .portfolio {
     background-color: white;
-    width: auto;
-    height: 600px;
-    padding: 60px;
+    width: 100%;
+    padding: 60px 0px;
     text-align: center;
 }
 
@@ -121,29 +144,27 @@ body {
     cursor: pointer;
     margin: 40px 28px 40px 28px;
     transition: 0.4s ease all;
-    /*z-index는 숫자가 높은 낮은 순서대로 차곡차곡 쌓인다*/
-    z-index: 1;
 }
 
-/*포트폴리오가 존재하는 a href를 이용해서 포폴 있는것만 흑백X*/
-.portfolio a img:hover {
-    box-shadow: 2px 2px 15px gray;
+/*존재하지 않은 포폴은 use로 사용 */
+.use:hover {
+    box-shadow: 3px 3px 40px gold;
     width: auto;
-    height: 370px;
+    height: 360px;
     filter: blur(5px);
-    -webkit-transition: 0.4s ease all;
-    filter: brightness(90%);
+    transition: 0.4s ease all;
+    filter: brightness(110%);
 }
 
-/*포폴이 없는 a태그가 안쓰인 포트폴리오안의 이미지들을 오버시 흑백처리*/
-.portfolio img:hover {
+/*존재 하지않은 포폴은 클래스를 none으로 줌*/
+.none:hover {
     box-shadow: 2px 2px 15px gray;
     width: auto;
-    height: 370px;
+    height: 360px;
     filter: blur(5px);
-    -webkit-transition: 0.4s ease all;
+    transition: 0.4s ease all;
     filter: brightness(90%);
-    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
 .portfolio hr {
